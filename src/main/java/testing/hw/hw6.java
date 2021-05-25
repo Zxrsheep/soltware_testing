@@ -29,7 +29,9 @@ public class hw6 {
                 System.out.println("越界");
                 temp.setResult(-1);
             }
-            temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+            else {
+                temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+            }
             list1.set(i,temp);
         }
         for (int i=0 ;i<list2.size();i++){
@@ -39,7 +41,10 @@ public class hw6 {
                 System.out.println("越界");
                 temp.setResult(-1);
             }
-            temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+            else {
+                temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+            }
+
             list2.set(i,temp);
         }
         System.out.println(list2);

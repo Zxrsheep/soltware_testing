@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class hw3Controller {
-    @RequestMapping("/hello")
+    @RequestMapping("/hw3")
     public String hw3(@RequestParam("id") int id){
         return "hw3";
     }

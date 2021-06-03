@@ -32,15 +32,19 @@ public class hw6Controller {
     }
 
     @ApiOperation(value = "hw6",notes = "输入本月分钟数以及本年至本月未按时缴费次数")
-    @ApiImplicitParam(name = "num" , value = "对应sheet序号",required = true,dataType = "int")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "num1" , value = "对应sheet序号1（暂时无用）",required = true,dataType = "int"),
+            @ApiImplicitParam(name = "num" , value = "对应sheet序号",required = false,dataType = "int")
+    })
     @PostMapping("/hw6")
     public List<entity_hw6> hw6(@RequestParam(value = "file",required = true) MultipartFile file
-            , @RequestParam("num") int num)
+            , @RequestParam("num1") int num1,@RequestParam("num") int num)
             throws IOException {
         System.out.println("111");
         hw6 hw = new hw6();
-        List<entity_hw6> list = hw6_read.repeatedRead(file,num);
+        List<entity_hw6> list = hw6_read.repeatedRead(file,num1);
         List<entity_hw6> list1 = hw6.ReadAndWrite(file,num);
+        //list1.addAll(list);
         return list1;
     }
 

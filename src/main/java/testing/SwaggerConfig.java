@@ -29,7 +29,7 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("testing.Controller"))
                 .paths(PathSelectors.any())
                 .build().apiInfo(new ApiInfoBuilder()
-                        .title("整合Swagger")
+                        .title("软件测试 homework")
                         .description("关于软件测试api使用")
                         .version("1.0")
                         //.contact(new Contact())

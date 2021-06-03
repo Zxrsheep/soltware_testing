@@ -22,8 +22,10 @@ public class entity_hw6 {
     }
 
     /**
-     * 用名字去匹配，这里需要注意，如果名字重复，会导致只有一个字段读取到数据
-     * result  存储在第四列
+     * 用名字去匹配value，这里需要注意，如果名字重复，会导致只有一个字段读取到数据
+     * expect 为预期结果，只存储并写入新的的excel
+     * result hw中计算后赋值
+     * index 对应的是sheet表的列数
      */
     @ExcelProperty(value = "minutes", index = 0)
     private int minutes;

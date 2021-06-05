@@ -43,6 +43,19 @@ public class hw6_read {
         list1 = temp1;
         list2 = temp2;
     }
+
+    /**
+     *
+     * @param filename 路径名
+     * @param sheet1 只一个表单
+     */
+    public static void repeatedRead(String filename,int sheet1){
+        //部分sheet读取
+        String fileName = filename;
+        List<entity_hw6> temp1 = EasyExcel.read(fileName,
+                entity_hw6.class, new DataListener()).sheet(sheet1).doReadSync();
+        list1 = temp1;
+    }
     //重载  直接传入文件
     public static List<entity_hw6> repeatedRead(MultipartFile file, int sheet) throws IOException {
         List<entity_hw6> list = EasyExcel.read(file.getInputStream()

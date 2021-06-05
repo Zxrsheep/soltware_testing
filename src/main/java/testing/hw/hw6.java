@@ -52,10 +52,12 @@ public class hw6 {
         hw6_write.write(list1,list2,1,2);
     }
 
-    public static List<entity_hw6> ReadAndWrite(MultipartFile file,int num) throws IOException {
+    public static List<entity_hw6> ReadAndWrite(int num){
         // read
         hw6_read Read = new hw6_read();
-        List<entity_hw6> list1 = Read.repeatedRead(file,num);
+        hw6_read.repeatedRead("src/main/java/testing/excel/hw6.xlsx",num);
+        // System.out.println(Read.getList1().get(3).getMinutes());
+        List<entity_hw6> list1 = hw6_read.getList1();
         for (int i=0 ;i<list1.size();i++){
             entity_hw6 temp = list1.get(i);
             boolean bool_boundary = hw6.boundary(temp.getMinutes(),temp.getTimes());
@@ -63,7 +65,29 @@ public class hw6 {
                 System.out.println("越界");
                 temp.setResult(-1);
             }
-            temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+            else {
+                temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+            }
+            list1.set(i,temp);
+        }
+        // write
+        hw6_write.write(list1,num);
+        return list1;
+    }
+
+    public static List<entity_hw6> ReadAndWrite(MultipartFile file,int num) throws IOException {
+        // read
+        List<entity_hw6> list1 = hw6_read.repeatedRead(file,num);
+        for (int i=0 ;i<list1.size();i++){
+            entity_hw6 temp = list1.get(i);
+            boolean bool_boundary = hw6.boundary(temp.getMinutes(),temp.getTimes());
+            if(!bool_boundary){
+                System.out.println("越界");
+                temp.setResult(-1);
+            }
+            else {
+                temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+            }
             list1.set(i,temp);
         }
         System.out.println(list1);

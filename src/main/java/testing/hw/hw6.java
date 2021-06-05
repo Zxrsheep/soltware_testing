@@ -75,26 +75,26 @@ public class hw6 {
         return list1;
     }
 
-    public static List<entity_hw6> ReadAndWrite(MultipartFile file,int num) throws IOException {
-        // read
-        List<entity_hw6> list1 = hw6_read.repeatedRead(file,num);
-        for (int i=0 ;i<list1.size();i++){
-            entity_hw6 temp = list1.get(i);
-            boolean bool_boundary = hw6.boundary(temp.getMinutes(),temp.getTimes());
-            if(!bool_boundary){
-                System.out.println("越界");
-                temp.setResult(-1);
-            }
-            else {
-                temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
-            }
-            list1.set(i,temp);
-        }
-        System.out.println(list1);
-        // write
-        hw6_write.write(list1,num);
-        return list1;
-    }
+//    public static List<entity_hw6> ReadAndWrite(MultipartFile file,int num) throws IOException {
+//        // read
+//        List<entity_hw6> list1 = hw6_read.repeatedRead(file,num);
+//        for (int i=0 ;i<list1.size();i++){
+//            entity_hw6 temp = list1.get(i);
+//            boolean bool_boundary = hw6.boundary(temp.getMinutes(),temp.getTimes());
+//            if(!bool_boundary){
+//                System.out.println("越界");
+//                temp.setResult(-1);
+//            }
+//            else {
+//                temp.setResult(hw6.calculation(temp.getMinutes(),temp.getTimes()));
+//            }
+//            list1.set(i,temp);
+//        }
+//        System.out.println(list1);
+//        // write
+//        hw6_write.write(list1,num);
+//        return list1;
+//    }
 
     public static boolean boundary(int minutes,int times){
         if (times<0 || times>11)

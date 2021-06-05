@@ -1,8 +1,11 @@
 package testing.hw;
 
 import testing.Entity.entity_hw1;
+import testing.Entity.entity_hw6;
 import testing.tool_hw1.hw1_read;
 import testing.tool_hw1.hw1_write;
+import testing.tool_hw6.hw6_read;
+import testing.tool_hw6.hw6_write;
 
 import java.util.List;
 import java.util.Scanner;
@@ -23,7 +26,7 @@ public class hw1 {
             boolean bool_boundary = hw1.boundary(temp.geta(),temp.getb(), temp.getc());
             if(!bool_boundary){
                 System.out.println("越界");
-                temp.setResult(null);
+                temp.setResult("不构成三角形");
             }
             else {
                 temp.setResult(result(hw1.type(temp.geta(),temp.getb(), temp.getc())));
@@ -35,7 +38,7 @@ public class hw1 {
             boolean bool_boundary = hw1.boundary(temp.geta(),temp.getb(), temp.getc());
             if(!bool_boundary){
                 System.out.println("越界");
-                temp.setResult(null);
+                temp.setResult("不构成三角形");
             }
             else {
                 temp.setResult(result(hw1.type(temp.geta(),temp.getb(), temp.getc())));
@@ -46,6 +49,29 @@ public class hw1 {
         System.out.println(list2);
         // write
         hw1_write.write(list1,list2,1,2);
+    }
+
+    public static List<entity_hw1> ReadAndWrite(int num){
+        // read
+        hw1_read Read = new hw1_read();
+        hw1_read.repeatedRead("src/main/java/testing/excel/hw1.xlsx",num);
+        // System.out.println(Read.getList1().get(3).getMinutes());
+        List<entity_hw1> list1 = hw1_read.getList1();
+        for (int i=0 ;i<list1.size();i++){
+            entity_hw1 temp = list1.get(i);
+            boolean bool_boundary = hw1.boundary(temp.geta(),temp.getb(), temp.getc());
+            if(!bool_boundary){
+                System.out.println("越界");
+                temp.setResult("不构成三角形");
+            }
+            else {
+                temp.setResult(result(hw1.type(temp.geta(),temp.getb(), temp.getc())));
+            }
+            list1.set(i,temp);
+        }
+        // write
+        hw1_write.write(list1,num);
+        return list1;
     }
 
 

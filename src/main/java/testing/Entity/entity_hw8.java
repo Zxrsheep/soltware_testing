@@ -27,8 +27,10 @@ public class entity_hw8 {
     private int year;
     @ExcelProperty(value = "month", index = 1)
     private int month;
-    @ExcelProperty(value = "day", index = 3)
+    @ExcelProperty(value = "day", index = 2)
     private int day;
+    @ExcelProperty(value = "expect", index = 3)
+    private int expect;
     @ExcelProperty(value = "result", index = 4)
     private int result;
 

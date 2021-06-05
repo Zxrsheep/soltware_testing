@@ -1,6 +1,9 @@
 package testing.hw;
 
+import testing.Entity.entity_hw6;
 import testing.Entity.entity_hw8;
+import testing.tool_hw6.hw6_read;
+import testing.tool_hw6.hw6_write;
 import testing.tool_hw8.hw8_read;
 import testing.tool_hw8.hw8_write;
 
@@ -26,7 +29,7 @@ public class hw8 {
                 temp.setResult(-1);
             }
             else {
-                temp.setResult(hw8.temp());
+                temp.setResult(hw8.temp(temp.getYear(),temp.getMonth(), temp.getDay()));
             }
             list1.set(i,temp);
         }
@@ -38,7 +41,7 @@ public class hw8 {
                 temp.setResult(-1);
             }
             else {
-                temp.setResult(hw8.temp());
+                temp.setResult(hw8.temp(temp.getYear(),temp.getMonth(), temp.getDay()));
             }
 
             list2.set(i,temp);
@@ -46,6 +49,29 @@ public class hw8 {
         System.out.println(list2);
         // write
         hw8_write.write(list1,list2,1,2);
+    }
+
+    public static List<entity_hw8> ReadAndWrite(int num){
+        // read
+        hw8_read Read = new hw8_read();
+        hw8_read.repeatedRead("src/main/java/testing/excel/hw8.xlsx",num);
+        // System.out.println(Read.getList1().get(3).getMinutes());
+        List<entity_hw8> list1 = hw8_read.getList1();
+        for (int i=0 ;i<list1.size();i++){
+            entity_hw8 temp = list1.get(i);
+            boolean bool_boundary = hw8.boundary(temp.getYear(),temp.getMonth(), temp.getDay());
+            if(!bool_boundary){
+                System.out.println("越界");
+                temp.setResult(-1);
+            }
+            else {
+                temp.setResult(hw8.temp(temp.getYear(),temp.getMonth(), temp.getDay()));
+            }
+            list1.set(i,temp);
+        }
+        // write
+        hw8_write.write(list1,num);
+        return list1;
     }
 
 
@@ -103,8 +129,38 @@ public class hw8 {
 
         }
     }
-    public static int temp(){
+    public static int temp(int years, int months, int days){
+        boolean isRun = false;
+        int totalDays = 0;
+        int beforeDays = 0;
+        for(int i = 1900; i < years; i++){
+            if((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0)){
+                totalDays = totalDays + 366;
+            }else{
+                totalDays = totalDays + 365;
+            }
+        }
+        for(int j = 1; j <= months; j++){
+            int day = 0;
+            switch(j){
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    day = 31;
+                    break; case 4: case 6: case 9: case 11: day = 30;
+                    break; case 2: if(isRun){
+                    day = 29;
+                }else {
+                    day = 28;
+                }
+                    //System.out.println(day);
+            }
+            if(j < months){
+                beforeDays = beforeDays + day;
+            }
+        }
+        totalDays = totalDays + beforeDays + days - 1;
+        temp = 1 + totalDays % 7 ;
         return temp;
+
     }
 
 

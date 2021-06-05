@@ -29,7 +29,9 @@ public class entity_hw1 {
     private int b;
     @ExcelProperty(value = "c", index = 2)
     private int c;
-    @ExcelProperty(value = "result", index = 3)
+    @ExcelProperty(value = "expect", index = 3)
+    private String expect;
+    @ExcelProperty(value = "result", index = 4)
     private String result;
 
 }

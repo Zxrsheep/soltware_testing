@@ -21,6 +21,8 @@ public class entity_hw6 {
         this.times = times;
     }
 
+    public void setResult(double result){this.result = result;}
+
     /**
      * 用名字去匹配value，这里需要注意，如果名字重复，会导致只有一个字段读取到数据
      * expect 为预期结果，只存储并写入新的的excel

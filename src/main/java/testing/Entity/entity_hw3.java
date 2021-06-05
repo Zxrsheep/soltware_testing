@@ -27,8 +27,10 @@ public class entity_hw3 {
     private int displays;
     @ExcelProperty(value = "hosts", index = 1)
     private int hosts;
-    @ExcelProperty(value = "peripherals", index = 3)
+    @ExcelProperty(value = "peripherals", index = 2)
     private int peripherals;
+    @ExcelProperty(value = "expect", index = 3)
+    private double expect;
     @ExcelProperty(value = "result", index = 4)
     private double result = -1;
 

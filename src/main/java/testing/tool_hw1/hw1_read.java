@@ -1,8 +1,12 @@
 package testing.tool_hw1;
 
 import com.alibaba.excel.EasyExcel;
+import org.springframework.web.multipart.MultipartFile;
 import testing.Entity.entity_hw1;
+import testing.Entity.entity_hw6;
+import testing.tool_hw6.hw6_read;
 
+import java.io.IOException;
 import java.util.List;
 
 public class hw1_read {
@@ -13,10 +17,17 @@ public class hw1_read {
         return list1;
     }
 
+    public static void setList1(List<entity_hw1> list1) {
+        hw1_read.list1 = list1;
+    }
+
     public static List<entity_hw1> getList2() {
         return list2;
     }
 
+    public static void setList2(List<entity_hw1> list2) {
+        hw1_read.list2 = list2;
+    }
 
 
     /**
@@ -32,10 +43,17 @@ public class hw1_read {
         list1 = temp1;
         list2 = temp2;
     }
+    public static void repeatedRead(String filename,int sheet1){
+        //部分sheet读取
+        String fileName = filename;
+        List<entity_hw1> temp1 = EasyExcel.read(fileName,
+                entity_hw1.class, new DataListener()).sheet(sheet1).doReadSync();
+        list1 = temp1;
+    }
     //重载  直接传入文件
-//    public static List<entity_hw6> repeatedRead(MultipartFile file, int sheet) throws IOException {
-//        List<entity_hw6> list = EasyExcel.read(file.getInputStream()
-//                , entity_hw6.class, new DataListener()).sheet(sheet).doReadSync();
-//        return list;
-//    }
+    public static List<entity_hw1> repeatedRead(MultipartFile file, int sheet) throws IOException {
+        List<entity_hw1> list = EasyExcel.read(file.getInputStream()
+                , entity_hw1.class, new DataListener()).sheet(sheet).doReadSync();
+        return list;
+    }
 }

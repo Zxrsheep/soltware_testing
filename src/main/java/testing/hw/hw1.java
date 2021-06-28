@@ -98,6 +98,8 @@ public class hw1 {
                 return "非等腰锐角三角形";
             case 7:
                 return "非等腰钝角三角形";
+            case 8:
+                return "不构成三角形";
         }
         return null;
     }
@@ -128,28 +130,32 @@ public class hw1 {
         if (a == b || c == b || a == c)
             equal = true;
         System.out.println(equal);
-        if(cc == aa + bb && equal == false){
-            System.out.println("直角三角形");
-            return 1;
-        }else if(aa == bb && aa == cc){
-            System.out.println("等边三角形");
-            return 2;
-        }else if(aa + bb > cc && equal == true){
-            System.out.println("等腰锐角三角形");
-            return 3;
-        }else if(aa + bb < cc && equal == true){
-            System.out.println("等腰钝角三角形");
-            return 4;
-        }else if(aa + bb == cc && equal == true){
-            System.out.println("等腰直角三角形");
-            return 5;
-        }else if(aa + bb > cc && equal == false){
-            System.out.println("非等腰锐角三角形");
-            return 6;
-        }else if(aa + bb < cc && equal == false){
-            System.out.println("非等腰钝角三角形");
-            return 7;
-        }
+        if(a + b > c && a + c > b && c + b > a){
+            if(cc == aa + bb && equal == false){
+                System.out.println("直角三角形");
+                return 1;
+            }else if(aa == bb && aa == cc){
+                System.out.println("等边三角形");
+                return 2;
+            }else if(aa + bb > cc && equal == true){
+                System.out.println("等腰锐角三角形");
+                return 3;
+            }else if(aa + bb < cc && equal == true){
+                System.out.println("等腰钝角三角形");
+                return 4;
+            }else if(aa + bb == cc && equal == true){
+                System.out.println("等腰直角三角形");
+                return 5;
+            }else if(aa + bb > cc && equal == false){
+                System.out.println("非等腰锐角三角形");
+                return 6;
+            }else if(aa + bb < cc && equal == false){
+                System.out.println("非等腰钝角三角形");
+                return 7;
+            }
+        }else{System.out.println("不构成三角形");
+        return 8;}
+
         return 0;
     }
 

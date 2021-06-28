@@ -1,5 +1,9 @@
 <template>
-  <p>hw7</p>
+  <div>
+<!--    <p>hw7</p>-->
+    <img src="../img/seven.png">
+  </div>
+
 </template>
 
 <script>

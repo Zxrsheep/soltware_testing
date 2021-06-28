@@ -1,48 +1,71 @@
 <template>
     <el-container style="height: 100%">
       <el-aside width="200px">
-        <el-menu
-          class="el-menu-vertical-demo"
-          background-color="#D3DCE6"
-          text-color="#333"
-          active-text-color="#0A5AA8"
-          style="height: 100%"
-          :default-active="$route.path"
-          router
-        >
-          <el-menu-item index="/hw1">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目一</span>
-          </el-menu-item>
-          <el-menu-item index="/hw2">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目二</span>
-          </el-menu-item>
-          <el-menu-item index="/hw3">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目三</span>
-          </el-menu-item>
-          <el-menu-item index="/hw4">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目四</span>
-          </el-menu-item>
-          <el-menu-item index="/hw5">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目五</span>
-          </el-menu-item>
-          <el-menu-item index="/hw6">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目六</span>
-          </el-menu-item>
-          <el-menu-item index="/hw7">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目七</span>
-          </el-menu-item>
-          <el-menu-item index="/hw8">
-            <i class="el-icon-menu"></i>
-            <span slot="title">题目八</span>
-          </el-menu-item>
-        </el-menu>
+<!--        <el-scrollbar style="height: 100%">-->
+          <el-menu
+            class="el-menu-vertical-demo"
+            background-color="#D3DCE6"
+            text-color="#333"
+            active-text-color="#0A5AA8"
+            style="height: 100%"
+            :default-active="$route.path"
+            router
+          >
+            <el-menu-item index="/hw1">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目一</span>
+            </el-menu-item>
+            <el-menu-item index="/hw2">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目二</span>
+            </el-menu-item>
+            <el-menu-item index="/hw3">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目三</span>
+            </el-menu-item>
+            <el-menu-item index="/hw4">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目四</span>
+            </el-menu-item>
+            <el-menu-item index="/hw5">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目五</span>
+            </el-menu-item>
+            <el-menu-item index="/hw6">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目六</span>
+            </el-menu-item>
+            <el-menu-item index="/hw7">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目七</span>
+            </el-menu-item>
+            <el-menu-item index="/hw8">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目八</span>
+            </el-menu-item>
+            <el-menu-item index="/hw9">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目九</span>
+            </el-menu-item>
+            <el-menu-item index="/hw10">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目十</span>
+            </el-menu-item>
+            <el-menu-item index="/hw11">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目十一</span>
+            </el-menu-item>
+            <el-menu-item index="/hw12">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目十二</span>
+            </el-menu-item>
+            <el-menu-item index="/hw13">
+              <i class="el-icon-menu"></i>
+              <span slot="title">题目十三</span>
+            </el-menu-item>
+          </el-menu>
+<!--        </el-scrollbar>-->
+
       </el-aside>
 <!--      <el-main>-->
 <!--        <router-view></router-view>-->
@@ -65,7 +88,7 @@ export default {
 
 .el-aside {
   background-color: #B3C0D1;
-  height: 645px;
+  /*height: 645px;*/
 }
 .el-menu-vertical-demo {
   background-color: #B3C0D1;

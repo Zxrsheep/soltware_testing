@@ -11,6 +11,11 @@ import hw6 from "../views/hw6";
 import hw7 from "../views/hw7";
 import hw8 from "../views/hw8";
 import Main from "../components/Main";
+import hw9 from "../views/hw9";
+import hw10 from "../views/hw10";
+import hw11 from "../views/hw11";
+import hw12 from "../views/hw12";
+import hw13 from "../views/hw13";
 
 Vue.use(Router)
 
@@ -66,6 +71,29 @@ export default new Router({
           path: '/hw8',
           name: 'hw8',
           component: hw8
+        },
+        {
+          path: '/hw9',
+          name: 'hw9',
+          component: hw9
+        },
+        {
+          path: '/hw10',
+          name: 'hw10',
+          component: hw10
+        },
+        {
+          path: '/hw11',
+          name: 'hw11',
+          component: hw11
+        },{
+          path: '/hw12',
+          name: 'hw12',
+          component: hw12
+        },{
+          path: '/hw13',
+          name: 'hw13',
+          component: hw13
         },
       ]
     }

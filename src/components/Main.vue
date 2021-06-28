@@ -31,5 +31,25 @@ export default {
 </script>
 
 <style scoped>
+/*.el-container {*/
+/*  height: 100%;*/
+/*}*/
 
+/*.el-header, .el-footer {*/
+/*  background-color: #B3C0D1;*/
+/*  color: #333;*/
+/*  text-align: center;*/
+/*  height: 60px !important;*/
+/*}*/
+
+/*.el-aside {*/
+/*  background-color: #D3DCE6;*/
+/*  color: #333;*/
+/*  text-align: center;*/
+/*  line-height: 200px;*/
+/*}*/
+
+/*.el-main {*/
+/*  background-color: #9ea4aa;*/
+/*}*/
 </style>

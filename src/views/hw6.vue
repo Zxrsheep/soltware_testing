@@ -114,7 +114,11 @@ export default {
         {
           value:'2',
           label:'弱一般等价类法'
-        }
+        },
+        {
+          value:'3',
+          label:'决策表法'
+        },
   ],
       value: ''
     }
